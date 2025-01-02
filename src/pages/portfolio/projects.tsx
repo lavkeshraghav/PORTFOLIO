@@ -43,7 +43,7 @@ const Projects = () => {
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
-          {projectList.map((project) => (
+          {projectList.map((project:any) => (
             <motion.div
               key={project.id}
               className="border rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow"

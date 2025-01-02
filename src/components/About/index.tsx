@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../../../public/images/profile.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+
 
 const Index = () => {
   return (
