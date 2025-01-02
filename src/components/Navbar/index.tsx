@@ -75,21 +75,21 @@ const Index = () => {
             className="profileIcon"
             onClick={() => {}}
             color="#fff"
-            style={{ width: "25px", height: "25px", marginRight: "10px" }}
+            style={{ width: "20px", height: "20px", marginRight: "10px" }}
           />
           <FaGithub
             size={20}
             className="profileIcon"
             onClick={() => {}}
             color="#fff"
-            style={{ width: "25px", height: "25px", marginRight: "10px" }}
+            style={{ width: "20px", height: "20px", marginRight: "10px" }}
           />
           <FaYoutube
             size={20}
             className="profileIcon"
             onClick={() => {}}
             color="#fff"
-            style={{ width: "25px", height: "25px" }}
+            style={{ width: "20px", height: "20px" }}
           />
         </div>
         <div className="md:hidden flex items-center">
@@ -99,13 +99,14 @@ const Index = () => {
         </div>
       </div>
       <div
-        className={`dark-mobile fixed top-0 shadow-lg right-0 bg-[#fff] w-[60%] h-screen transform ${
+        className={`dark-mobile fixed top-0 shadow-lg right-0 bg-blue-600 w-[60%] h-screen transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out z-20`}
       >
         <div className="p-4">
           <div className="flex justify-between items-center">
-            <FaTimes onClick={toggleMenu} size={24} />
+            <FaTimes onClick={toggleMenu} size={24}  color="#fff"/>
+            <Image src={Logo} height={300} width={150} alt="logo" />
           </div>
           <Link
             href="/"
@@ -115,19 +116,19 @@ const Index = () => {
           >
             Home
           </Link>
-          <Link href="/link2pay" className="block py-2 hover:text-gray-300 ">
+          <Link href="/portfolio/about" className="block py-2 text-[#fff] hover:text-gray-300 ">
             About
           </Link>
-          <Link href="/payment" className="block py-2 hover:text-gray-300 ">
+          <Link href="/portfolio/skills" className="block py-2 text-[#fff] hover:text-gray-300 ">
             Skills
           </Link>
-          <Link href="/contact-us" className="block py-2 hover:text-gray-300 ">
+          <Link href="/portfolio/projects" className="block py-2 text-[#fff] hover:text-gray-300 ">
             Projects
           </Link>
-          <Link href="/offer" className="block py-2 hover:text-gray-300 ">
+          <Link href="/portfolio/blogs" className="block py-2 text-[#fff] hover:text-gray-300 ">
             Blogs
           </Link>
-          <Link href="/contact-us" className="block py-2 hover:text-gray-300 ">
+          <Link href="/portfolio/learning" className="block py-2 text-[#fff] hover:text-gray-300 ">
             Learning
           </Link>
         </div>
