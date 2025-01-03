@@ -1,8 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+type Skill = {
+  name: string;
+  proficiency: number;
+};
+
 const Index = () => {
-  const skills = [
+  const skills: Skill[] = [
     { name: "DevOps", proficiency: 10 },
     { name: "React js", proficiency: 90 },
     { name: "React Native", proficiency: 85 },
@@ -17,7 +22,7 @@ const Index = () => {
 
   const barVariants = {
     hidden: { width: "0%" },
-    visible: (custom:any) => ({
+    visible: (custom: number) => ({
       width: `${custom}%`,
       transition: { duration: 1.2, ease: "easeInOut" },
     }),
@@ -28,7 +33,7 @@ const Index = () => {
       <div className="text-center w-[100%]">
         <h2 className="text-3xl font-bold mb-6 custom-font">My Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {skills.map((skill:any, index:any) => (
+          {skills.map((skill, index) => (
             <div
               key={index}
               className="p-4 rounded-lg"

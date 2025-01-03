@@ -54,7 +54,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="text-blue-500 underline hover:text-blue-700"
               >
-                Let's chat at 7505786956
+                Let&apos;s chat at 7505786956
               </a>
             </p>
             <motion.button

@@ -2,8 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar/index";
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
 const Projects = () => {
-  const projectList = [
+  const projectList: Project[] = [
     {
       id: 1,
       title: "Mighty Jackpot",
@@ -43,7 +51,7 @@ const Projects = () => {
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
-          {projectList.map((project:any) => (
+          {projectList.map((project) => (
             <motion.div
               key={project.id}
               className="border rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow"
