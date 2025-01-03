@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     domains: ["localhost", "api.charlinasweeps.co.in"],
     unoptimized: true,
   },
-  output: "export",
+  // output: "export",
 };
 
 export default nextConfig;

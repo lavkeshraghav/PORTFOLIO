@@ -46,25 +46,33 @@ const Index = () => {
           </Link>
           <Link
             href="/portfolio/skills"
-            className={routeName === "/portfolio/skills" ? "activeLink " : "link "}
+            className={
+              routeName === "/portfolio/skills" ? "activeLink " : "link "
+            }
           >
             Skills
           </Link>
           <Link
             href="/portfolio/projects"
-            className={routeName === "/portfolio/projects" ? "activeLink " : "link "}
+            className={
+              routeName === "/portfolio/projects" ? "activeLink " : "link "
+            }
           >
             Projects
           </Link>
           <Link
             href="/portfolio/blogs"
-            className={routeName === "/portfolio/blogs" ? "activeLink " : "link "}
+            className={
+              routeName === "/portfolio/blogs" ? "activeLink " : "link "
+            }
           >
             Blogs
           </Link>
           <Link
             href="/portfolio/learning"
-            className={routeName === "/portfolio/learning" ? "activeLink " : "link "}
+            className={
+              routeName === "/portfolio/learning" ? "activeLink " : "link "
+            }
           >
             Learning
           </Link>
@@ -73,28 +81,34 @@ const Index = () => {
           <FaLinkedin
             size={20}
             className="profileIcon"
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/your-profile", "_blank")
+            }
             color="#fff"
             style={{ width: "20px", height: "20px", marginRight: "10px" }}
           />
           <FaGithub
             size={20}
             className="profileIcon"
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/your-profile", "_blank")
+            }
             color="#fff"
             style={{ width: "20px", height: "20px", marginRight: "10px" }}
           />
           <FaYoutube
             size={20}
             className="profileIcon"
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/your-profile", "_blank")
+            }
             color="#fff"
             style={{ width: "20px", height: "20px" }}
           />
         </div>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu}>
-            <FaBars size={24} />
+            <FaBars size={24} color="#fff"/>
           </button>
         </div>
       </div>
@@ -105,7 +119,7 @@ const Index = () => {
       >
         <div className="p-4">
           <div className="flex justify-between items-center">
-            <FaTimes onClick={toggleMenu} size={24}  color="#fff"/>
+            <FaTimes onClick={toggleMenu} size={24} color="#fff" />
             <Image src={Logo} height={300} width={150} alt="logo" />
           </div>
           <Link
@@ -116,19 +130,34 @@ const Index = () => {
           >
             Home
           </Link>
-          <Link href="/portfolio/about" className="block py-2 text-[#fff] hover:text-gray-300 ">
+          <Link
+            href="/portfolio/about"
+            className="block py-2 text-[#fff] hover:text-gray-300 "
+          >
             About
           </Link>
-          <Link href="/portfolio/skills" className="block py-2 text-[#fff] hover:text-gray-300 ">
+          <Link
+            href="/portfolio/skills"
+            className="block py-2 text-[#fff] hover:text-gray-300 "
+          >
             Skills
           </Link>
-          <Link href="/portfolio/projects" className="block py-2 text-[#fff] hover:text-gray-300 ">
+          <Link
+            href="/portfolio/projects"
+            className="block py-2 text-[#fff] hover:text-gray-300 "
+          >
             Projects
           </Link>
-          <Link href="/portfolio/blogs" className="block py-2 text-[#fff] hover:text-gray-300 ">
+          <Link
+            href="/portfolio/blogs"
+            className="block py-2 text-[#fff] hover:text-gray-300 "
+          >
             Blogs
           </Link>
-          <Link href="/portfolio/learning" className="block py-2 text-[#fff] hover:text-gray-300 ">
+          <Link
+            href="/portfolio/learning"
+            className="block py-2 text-[#fff] hover:text-gray-300 "
+          >
             Learning
           </Link>
         </div>
