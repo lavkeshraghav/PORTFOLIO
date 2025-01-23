@@ -14,25 +14,33 @@ const Projects = () => {
   const projectList: Project[] = [
     {
       id: 1,
-      title: "Mighty Jackpot",
-      description: "This is a description of Project 1.",
-      image: "/images/jackpot.jpeg",
-      link: "https://project1.example.com",
+      title: "News Application",
+      description: "This is news application",
+      image: "/images/news.jpeg",
+      link: "https://1newshindi.com",
     },
     {
       id: 2,
-      title: "Charlina Sweeps",
-      description: "This is a description of Project 2.",
-      image: "/images/Charlina.jpeg",
-      link: "https://project2.example.com",
+      title: "Studay IT Nepal",
+      description: "This it study site",
+      image: "/images/ItStudy.jpeg",
+      link: "https://1newshindi.com",
     },
     {
       id: 3,
-      title: "News Application",
-      description: "This is a description of Project 3.",
+      title: "Mighty Jackpot",
+      description: "Mighty Jackpot is a gaming site play win coins",
       image: "/images/jackpot.jpeg",
-      link: "https://project3.example.com",
+      link: "https://beamish-salmiakki-520990.netlify.app",
     },
+    {
+      id: 4,
+      title: "Charlina Sweeps",
+      description: "Charlina Sweeps is a download betting app store",
+      image: "/images/Charlina.jpeg",
+      link: "charlinasweeps.co.in",
+    },
+   
   ];
 
   const cardVariants = {
