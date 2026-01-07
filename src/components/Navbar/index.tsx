@@ -6,164 +6,137 @@ import {
   FaGithub,
   FaYoutube,
 } from "react-icons/fa";
-import Logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Logo from "../../../public/images/logo.png";
 
-const Index = () => {
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
-  const routeName = router.pathname;
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const menu = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/portfolio/about" },
+    { name: "Skills", path: "/portfolio/skills" },
+    { name: "Projects", path: "/portfolio/projects" },
+    { name: "Blogs", path: "/portfolio/blogs" },
+    { name: "Learning", path: "/portfolio/learning" },
+  ];
 
   return (
-    <nav className="shadow-lg  bg-gradient-to-r from-blue-400 to-blue-600 pl-4 pr-4 pt-2 pb-2 w-full z-20 fixed top-0 left-0 right-0">
-      <div className="container mx-auto flex justify-between items-center ">
-        <div className="text-xl font-bold mb-3 mt-3">
-          <Link href="/">
-            <Image src={Logo} height={300} width={150} alt="logo" />
+    <>
+      {/* ===== DESKTOP NAVBAR ===== */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f172a] via-[#020617] to-[#0f172a] shadow-xl">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            {/* <Image src={Logo} alt="Logo" width={140} height={50} /> */}
+
+            <h1 className=" font-extrabold leading-tight">
+              <span className="text-cyan-400">PORTFOLIO</span>
+            </h1>
           </Link>
-        </div>
-        <div className="hidden md:flex space-x-6">
-          <Link
-            href="/"
-            className={routeName === "/" ? "activeLink " : "link "}
+
+          {/* Menu */}
+          <nav className="hidden md:flex bg-[#020617] rounded-full px-6 py-2 gap-6">
+            {menu.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`text-sm font-medium transition-all px-4 py-2 rounded-full
+                ${
+                  router.pathname === item.path
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-300 hover:text-white hover:bg-blue-500/20"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Social Icons */}
+          <div className="hidden md:flex items-center gap-4 text-white">
+            <FaLinkedin
+              className="cursor-pointer hover:text-blue-400 transition"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/lavkesh-raghav-633427327",
+                  "_blank"
+                )
+              }
+            />
+            <FaGithub
+              className="cursor-pointer hover:text-gray-300 transition"
+              onClick={() =>
+                window.open(
+                  "https://github.com/lavkeshraghav?tab=overview&from=2025-12-01&to=2025-12-31",
+                  "_blank"
+                )
+              }
+            />
+            <FaYoutube
+              className="cursor-pointer hover:text-red-500 transition"
+              onClick={() =>
+                window.open(
+                  "https://youtube.com/@luvraghav?si=pGc_fxhrN7qNykj_",
+                  "_blank"
+                )
+              }
+            />
+          </div>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden text-white text-2xl"
           >
-            Home
-          </Link>
-          <Link
-            href="/portfolio/about"
-            className={
-              routeName === "/portfolio/about" ? "activeLink " : "link "
-            }
-          >
-            About
-          </Link>
-          <Link
-            href="/portfolio/skills"
-            className={
-              routeName === "/portfolio/skills" ? "activeLink " : "link "
-            }
-          >
-            Skills
-          </Link>
-          <Link
-            href="/portfolio/projects"
-            className={
-              routeName === "/portfolio/projects" ? "activeLink " : "link "
-            }
-          >
-            Projects
-          </Link>
-          <Link
-            href="/portfolio/blogs"
-            className={
-              routeName === "/portfolio/blogs" ? "activeLink " : "link "
-            }
-          >
-            Blogs
-          </Link>
-          <Link
-            href="/portfolio/learning"
-            className={
-              routeName === "/portfolio/learning" ? "activeLink " : "link "
-            }
-          >
-            Learning
-          </Link>
-        </div>
-        <div className="flex justify-between items-center hide-in-mobile ">
-          <FaLinkedin
-            size={20}
-            className="profileIcon"
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/your-profile", "_blank")
-            }
-            color="#fff"
-            style={{ width: "20px", height: "20px", marginRight: "10px" }}
-          />
-          <FaGithub
-            size={20}
-            className="profileIcon"
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/your-profile", "_blank")
-            }
-            color="#fff"
-            style={{ width: "20px", height: "20px", marginRight: "10px" }}
-          />
-          <FaYoutube
-            size={20}
-            className="profileIcon"
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/your-profile", "_blank")
-            }
-            color="#fff"
-            style={{ width: "20px", height: "20px" }}
-          />
-        </div>
-        <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu}>
-            <FaBars size={24} color="#fff"/>
+            <FaBars />
           </button>
         </div>
-      </div>
+      </header>
+
+      {/* ===== MOBILE FULLSCREEN MENU ===== */}
       <div
-        className={`dark-mobile fixed top-0 shadow-lg right-0 bg-blue-600 w-[60%] h-screen transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-500 ease-in-out z-20`}
+        className={`fixed inset-0 bg-[#020617] z-50 flex flex-col justify-center items-center
+        transition-all duration-500 ${
+          open ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
       >
-        <div className="p-4">
-          <div className="flex justify-between items-center">
-            <FaTimes onClick={toggleMenu} size={24} color="#fff" />
-            <Image src={Logo} height={300} width={150} alt="logo" />
-          </div>
-          <Link
-            href="/"
-            className={
-              routeName === "/" ? "activeLink block py-2 " : "link block py-2 "
-            }
-          >
-            Home
-          </Link>
-          <Link
-            href="/portfolio/about"
-            className="block py-2 text-[#fff] hover:text-gray-300 "
-          >
-            About
-          </Link>
-          <Link
-            href="/portfolio/skills"
-            className="block py-2 text-[#fff] hover:text-gray-300 "
-          >
-            Skills
-          </Link>
-          <Link
-            href="/portfolio/projects"
-            className="block py-2 text-[#fff] hover:text-gray-300 "
-          >
-            Projects
-          </Link>
-          <Link
-            href="/portfolio/blogs"
-            className="block py-2 text-[#fff] hover:text-gray-300 "
-          >
-            Blogs
-          </Link>
-          <Link
-            href="/portfolio/learning"
-            className="block py-2 text-[#fff] hover:text-gray-300 "
-          >
-            Learning
-          </Link>
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6 text-white text-3xl"
+        >
+          <FaTimes />
+        </button>
+
+        <div className="flex flex-col gap-6 text-center">
+          {menu.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              onClick={() => setOpen(false)}
+              className={`text-2xl font-semibold transition
+              ${
+                router.pathname === item.path
+                  ? "text-blue-500"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex gap-6 mt-10 text-white text-xl">
+          <FaLinkedin />
+          <FaGithub />
+          <FaYoutube />
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
-export default Index;
+export default Navbar;

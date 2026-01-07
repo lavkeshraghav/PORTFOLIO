@@ -1,73 +1,148 @@
 import React from "react";
-import profile from "../../../public/images/profile.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import {
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+import profile from "../../../public/images/lavkesh.jpg";
 
 const Index = () => {
   return (
-    <>
-      <div className="mt-[5rem] md:ml-[8rem] md:mr-[8rem] h-[80vh] md:flex justify-center items-center">
-        <div className="flex md:justify-between justify-center p-5 md:flex-row flex-col">
-          {/* Profile Image with Motion */}
-          <motion.div
-            className="md:block flex justify-center items-center md:w-[50%] w-[100%]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            whileHover={{ scale: 1.1 }}
+    <section className="min-h-screen bg-black flex items-center justify-center px-6 md:px-20">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full max-w-6xl grid md:grid-cols-2 gap-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl"
+      >
+        {/* Text Section */}
+        <div className="flex flex-col justify-center">
+          <motion.h1
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl font-extrabold text-white leading-tight"
           >
-            <Image
-              src={profile}
-              alt="profile"
-              width={300}
-              height={300}
-              className="rounded-full"
-            />
+            Hi, I’m{" "}
+            <span className="text-blue-500">Lavkesh Kumar Raghav</span>
+            <br />
+            DevOps Engineer
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="mt-6 text-gray-400 text-lg leading-relaxed"
+          >
+            I design and deploy scalable cloud infrastructure, automate CI/CD
+            pipelines, and build reliable production-grade systems using modern
+            DevOps tools and practices.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap gap-4 mt-8"
+          >
+            <a
+              href="https://wa.me/916398139361"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition"
+            >
+              WhatsApp
+            </a>
+
+            <a
+              href="/images/Lavkesh.pdf"
+              className="px-6 py-3 rounded-xl border border-gray-600 text-gray-300 hover:border-blue-500 hover:text-white transition"
+            >
+              Download CV
+            </a>
           </motion.div>
 
-          {/* Text Content with Motion */}
+          {/* Contact Icons */}
           <motion.div
-            className="md:w-[50%] w-[100%] flex-col"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="flex gap-6 mt-10 text-2xl text-gray-400"
           >
-            <p className="text-blue-500 font-bold text-[35px]">
-              Hey, I am a<br /> software developer
-            </p>
-            <p
-              style={{
-                lineHeight: "2",
-                fontSize: "22px",
-                marginBottom: "5px",
-                marginTop: "5px",
-              }}
+            <a
+              href="https://wa.me/916398139361"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-500 transition"
+              title="WhatsApp"
             >
-              I can help you solve a problem, build a project, or grow an
-              existing project.
-            </p>
-            <p>
-              <a
-                href="https://wa.me/7505786956"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 underline hover:text-blue-700"
-              >
-                Let&apos;s chat at 7505786956
-              </a>
-            </p>
-            <motion.button
-              className="bg-gradient-to-r from-blue-400 to-blue-600 text-[#fff] p-2 rounded-[5px] mt-3 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="tel:+916398139361"
+              className="hover:text-blue-400 transition"
+              title="Call"
             >
-              DOWNLOAD CV
-            </motion.button>
+              <FaPhoneAlt />
+            </a>
+
+            <a
+              href="mailto:lavkeshraghav190@gmail.com"
+              className="hover:text-red-400 transition"
+              title="Email"
+            >
+              <FaEnvelope />
+            </a>
+
+            <a
+              href="https://github.com/lavkeshraghav?tab=overview&from=2025-12-01&to=2025-12-31"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+              title="GitHub"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/lavkesh-raghav-633427327"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500 transition"
+              title="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
           </motion.div>
         </div>
-      </div>
-    </>
+
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center items-center"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-blue-500 blur-2xl opacity-30" />
+            <Image
+              src={profile}
+              alt="Profile"
+              width={320}
+              height={320}
+              className="relative rounded-full border-4 border-white/10 shadow-xl"
+            />
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 
