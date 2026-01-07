@@ -6,10 +6,8 @@ import {
   FaGithub,
   FaYoutube,
 } from "react-icons/fa";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Logo from "../../../public/images/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
